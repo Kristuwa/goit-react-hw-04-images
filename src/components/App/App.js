@@ -20,7 +20,7 @@ export const App = () => {
     if (searchWord === '') {
       return;
     }
-    console.log('делаю еще раз');
+
     const fetch = async () => {
       try {
         setStatus('pending');
