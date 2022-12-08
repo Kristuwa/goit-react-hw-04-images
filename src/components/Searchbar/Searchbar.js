@@ -10,9 +10,8 @@ import { useState } from 'react';
 export const Searchbar = ({ onSubmit }) => {
   const [searchWord, setSearchWord] = useState('');
 
-  const reset = e => {
-    const { searchWord } = e.target;
-    searchWord.value = '';
+  const reset = () => {
+    setSearchWord('');
   };
 
   const handleChange = e => {
@@ -27,7 +26,7 @@ export const Searchbar = ({ onSubmit }) => {
       return;
     }
     onSubmit(searchWord.toLowerCase());
-    reset(e);
+    reset();
   };
 
   return (
@@ -44,6 +43,7 @@ export const Searchbar = ({ onSubmit }) => {
           autoFocus
           name="searchWord"
           placeholder="Search images and photos"
+          value={searchWord}
         />
       </SearchForm>
     </Header>
